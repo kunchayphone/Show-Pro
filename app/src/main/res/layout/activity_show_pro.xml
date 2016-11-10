@@ -8,6 +8,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="pronetsimthai.app.kunchay.showpro.ShowPro">
+    tools:context="pronetsimthai.app.kunchay.showpro.ShowPro"
+    android:background="@drawable/bg2">
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/LivPromotion"
+        android:background="#82f8f1f1" />
 </RelativeLayout>
