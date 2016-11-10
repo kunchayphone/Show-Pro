@@ -1,6 +1,12 @@
 package pronetsimthai.app.kunchay.showpro;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
+import android.support.v4.net.ConnectivityManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,9 +41,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trueImageView.setOnClickListener(this);
 
             //Test Add Value to SQLite
-        testAddValue();
+        //testAddValue();
 
+        //Check Internet
+        checkInternet();
     }   // Main Method
+
+    private void checkInternet() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        if ((networkInfo !=null) && (networkInfo.isConnected())) {
+
+                //Internet OK
+                deleteAllSQLite();
+
+
+        }  //if
+
+    }//CheckInternet
+
+    private void deleteAllSQLite() {
+
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase(myConstant.getDatabase_name(),
+                MODE_PRIVATE, null);
+        String[] strings = myConstant.getTableStrings();
+        for (int i=1;i<strings.length;i++) {
+            sqLiteDatabase.delete(strings[i], null, null);
+        }
+
+    }
+
+    private class SynPromotion extends AsyncTask<String, Void, String> {
+
+        //Explicit
+        private Context context;
+
+        public SynPromotion(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            return null;
+        }   //doInBack
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        } //OnPost
+
+
+    }   // SynPromotion Class
+
+
 
     private void testAddValue() {
         String[] strings = new String[]{null,
