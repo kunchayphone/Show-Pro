@@ -1,5 +1,6 @@
 package pronetsimthai.app.kunchay.showpro;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,8 +48,14 @@ public class ShowPro extends AppCompatActivity {
         R.drawable.dtac_logo,R.drawable.true_logo};
         imageView.setImageResource(iconInts[anInt]);
 
+        //Create ListView
+        MyConstant myConstant = new MyConstant();
+
 
     } // Main Method
+
+
+
 
 
 
