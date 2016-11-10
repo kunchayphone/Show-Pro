@@ -16,7 +16,7 @@
         android:id="@+id/LivPromotion"
         android:background="#82f8f1f1"
         android:layout_below="@+id/LinTop"
-        android:layout_above="@id/button" />
+        android:layout_above="@+id/button" />
 
     <LinearLayout
         android:orientation="horizontal"
