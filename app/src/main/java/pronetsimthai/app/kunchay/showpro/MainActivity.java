@@ -150,13 +150,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String[] resuStrings = new String[columnStrings.length];
                     resuStrings[0] = null;
 
-                    for (int i1=1;i<columnStrings.length;i++) {
+                    for (int i1=1;i1<columnStrings.length;i1++) {
 
                         resuStrings[i1] = jsonObject.getString(columnStrings[i1]);
 
+
                     } //for2
 
-                    myManage,addV
+                    myManage.addValueToSQLite(anInt,resuStrings);
 
                 }  //for
 
