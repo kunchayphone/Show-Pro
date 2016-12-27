@@ -65,7 +65,7 @@ public class ShowPro extends AppCompatActivity {
             final String[] priceStrings = new String[cursor.getCount()];
             final String[] deteilStrings = new String[cursor.getCount()];
             String[] registStrings = new String[cursor.getCount()];
-            String[] codeStrings = new String[cursor.getCount()];
+            final String[] codeStrings = new String[cursor.getCount()];
             String[] periodStrings = new String[cursor.getCount()];
             String[] dateRecordStrings = new String[cursor.getCount()];
             String[] showPeriodStrings = new String[cursor.getCount()];
@@ -95,7 +95,7 @@ public class ShowPro extends AppCompatActivity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                     MyAlert myAlert = new MyAlert(ShowPro.this,anInt,nameStrings[i],
-                            deteilStrings[i],priceStrings[i]);
+                            deteilStrings[i],priceStrings[i] ,codeStrings[i]) ;
                     myAlert.myDialog();
 
                 }
