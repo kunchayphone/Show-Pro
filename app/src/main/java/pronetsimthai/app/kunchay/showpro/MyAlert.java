@@ -54,7 +54,7 @@ public class MyAlert {
 
                 try {
 
-                    codeString = codeString.replace("*", Uri.encode("*")).replace("*", Uri.encode("*"));
+                    codeString = codeString.replace("*", Uri.encode("*")).replace("#", Uri.encode("#"));
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     Uri data = Uri.parse("tel:" + codeString);
                     intent.setData(data);
